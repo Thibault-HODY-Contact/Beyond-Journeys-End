@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
 
     [SerializeField] Animator _animator;
     [SerializeField] Camera _camera;
+
+    public bool canMove = true;
     public float Speed { get => _speed; set => _speed = value; }
 
     public float RunSpeed { get => _RunSpeed; set => _RunSpeed = value; }
@@ -22,6 +24,9 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        if (!canMove)
+            return;
+
         if(MoveDirection.x != 0|| MoveDirection.y != 0)
         {
             if(isRunning)
