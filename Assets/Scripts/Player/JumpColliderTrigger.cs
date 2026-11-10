@@ -9,7 +9,7 @@ public class JumpColliderTrigger : MonoBehaviour
         if(other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             _jumpSystem.isJumping = false;
-
+            _jumpSystem.isGrounded = true;
         }
     }
 
@@ -18,6 +18,10 @@ public class JumpColliderTrigger : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             _jumpSystem.isJumping = true;
+            _jumpSystem.isGrounded = false;
+
+            _jumpSystem.canJump = false;
+
         }
     }
 }

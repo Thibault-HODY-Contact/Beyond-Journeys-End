@@ -16,10 +16,18 @@ public class JumpSystem : MonoBehaviour
 
     public bool isJumping = false;
 
+    public bool isGrounded = true;
+
+
+    public bool canJump = true;
+
+    public float Cooldown = 0.5f;
+
+    float timer = 0;
 
     void Update()
     {
-        if(Jump)
+        if(Jump && canJump)
         {
             _animator.SetTrigger("Jumped");
             
@@ -32,6 +40,15 @@ public class JumpSystem : MonoBehaviour
         }
         _animator.SetBool("IsJumping", isJumping);
 
+
+        if(!canJump&& timer < Cooldown)
+        {
+            timer += Time.deltaTime;
+        }else if(!canJump && timer >= Cooldown&& isGrounded)
+        {
+            timer = 0;
+            canJump = true;
+        }
 
     }
 }
