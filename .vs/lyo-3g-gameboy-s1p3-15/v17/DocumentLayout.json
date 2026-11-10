@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|c:\\users\\jlefevre\\documents\\github\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\player\\looksystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\looksystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LookSystem.cs",
+              "DocumentMoniker": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\LookSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\LookSystem.cs",
+              "ToolTip": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\LookSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\LookSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T11:41:24.392Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
