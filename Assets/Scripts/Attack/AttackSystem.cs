@@ -14,6 +14,8 @@ public class AttackSystem : MonoBehaviour
 
     public bool Attacking = false;
 
+    public bool StopMovement = false;
+
     float _CooldownTimer = 0;
     float _HitDurationTimer = 0;
 
@@ -33,6 +35,7 @@ public class AttackSystem : MonoBehaviour
     public void Attack()
     {
         Attacking = true;
+        StopMovement = true;
     }
 
 

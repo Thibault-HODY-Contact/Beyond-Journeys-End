@@ -16,7 +16,7 @@ public class PlayerBrain : MonoBehaviour
     [SerializeField] JumpSystem _jumpSystem;
 
     [SerializeField] AttackSystem _Attack1;
-
+    Vector2 _moveInput;
 
 
     void Start()
@@ -75,20 +75,19 @@ public class PlayerBrain : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        
-    }
-
-
     void UpdateMove(InputAction.CallbackContext context)
     {
-        if (!_Attack1.Attacking)
-        {
-            _moveSystem.canMove = true;
-            _moveSystem.MoveDirection = context.ReadValue<Vector2>(); 
-        }
+        _moveInput = context.ReadValue<Vector2>(); 
     }
+
+    void Update()
+    {
+        if (_Attack1.StopMovement)
+            _moveSystem.MoveDirection = Vector2.zero; 
+        else
+            _moveSystem.MoveDirection = _moveInput;   
+    }
+
 
     void UpdateRun(InputAction.CallbackContext context)
     {
@@ -97,15 +96,16 @@ public class PlayerBrain : MonoBehaviour
 
     void UpdateJump(InputAction.CallbackContext context)
     {
+        if (_Attack1.StopMovement) return;          
         _jumpSystem.Jump = context.action.WasPressedThisFrame();
     }
 
     void UpdateAttack1(InputAction.CallbackContext context)
     {
-        if(context.action.WasPressedThisFrame())
+        if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded)
         {
             _animator.SetTrigger("Attack1");
-            _moveSystem.canMove = false;
+            _Attack1.StopMovement = true;          
         }
     }
 }

@@ -10,6 +10,12 @@ public class AttackTrigger : MonoBehaviour
     {
 
         AttackList[id.ID].Attack();
-        Debug.Log("aat");
     }
+
+    public void UnlockMovement(AttackID id)
+    {
+
+        AttackList[id.ID].StopMovement = false;
+    }
+
 }
