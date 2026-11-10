@@ -1096,9 +1096,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 330585545}
     - target: {fileID: 3136220645620912616, guid: 4f39c909578e4694f90f672597ce2a69, type: 3}
+      propertyPath: _RunSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136220645620912616, guid: 4f39c909578e4694f90f672597ce2a69, type: 3}
       propertyPath: _animator
       value: 
       objectReference: {fileID: 9062224509266992367}
+    - target: {fileID: 3365682284630578381, guid: 4f39c909578e4694f90f672597ce2a69, type: 3}
+      propertyPath: _runInput
+      value: 
+      objectReference: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     - target: {fileID: 3365682284630578381, guid: 4f39c909578e4694f90f672597ce2a69, type: 3}
       propertyPath: _lookInput
       value: 

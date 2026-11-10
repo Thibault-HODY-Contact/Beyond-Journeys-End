@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerBrain : MonoBehaviour
 {
     [SerializeField] InputActionReference _movementInput;
-    [SerializeField] InputActionReference _lookInput;
+    [SerializeField] InputActionReference _runInput;
 
     [SerializeField] Movement _moveSystem;
 
@@ -20,7 +20,13 @@ public class PlayerBrain : MonoBehaviour
 
         }
 
-       
+        if (_runInput != null)
+        {
+
+            _runInput.action.performed += UpdateRun;
+            _runInput.action.canceled += UpdateRun;
+
+        }
 
     }
     private void OnDestroy()
@@ -29,8 +35,10 @@ public class PlayerBrain : MonoBehaviour
 
         _movementInput.action.performed -= UpdateMove;
         _movementInput.action.canceled -= UpdateMove;
-        
 
+        if (_runInput == null) return;
+        _runInput.action.performed -= UpdateRun;
+        _runInput.action.canceled -= UpdateRun;
     }
 
     void Update()
@@ -44,5 +52,9 @@ public class PlayerBrain : MonoBehaviour
         _moveSystem.MoveDirection = context.ReadValue<Vector2>();
     }
 
-   
+    void UpdateRun(InputAction.CallbackContext context)
+    {
+        _moveSystem.isRunning = context.action.WasPressedThisFrame();
+    }
+
 }

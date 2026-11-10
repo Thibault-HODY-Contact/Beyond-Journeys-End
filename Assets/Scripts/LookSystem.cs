@@ -16,7 +16,6 @@ public class LookSystem : InputAxisControllerBase<LookSystem.Reader>
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // When the PlayerInput receives an input, send it to all the controllers
         if (PlayerInput == null)
             TryGetComponent(out PlayerInput);
         if (PlayerInput == null)
@@ -32,7 +31,6 @@ public class LookSystem : InputAxisControllerBase<LookSystem.Reader>
         }
     }
 
-    // We process user input on the Update clock
     void Update()
     {
         if (Application.isPlaying)
@@ -45,21 +43,19 @@ public class LookSystem : InputAxisControllerBase<LookSystem.Reader>
     {
         public InputActionReference Input;
         InputAction m_Action;
-        Vector2 m_Value; // the cached value of the input
+        Vector2 m_Value; 
         float MouseRatio = 0.0005f;
         public float m_Scale = 10;
 
         public void ProcessInput(InputAction action)
         {
-            // If it's my action then cache the new value
             if (Input != null && Input.action.id == action.id)
             {
                 m_Action = action;
                 if (action.expectedControlType == "Vector2")
                 {
                     m_Value = action.ReadValue<Vector2>();
-                    //m_Value.x = Mathf.Clamp(m_Value.x, -1, 1)* m_Scale;
-                    //m_Value.y = Mathf.Clamp(m_Value.y, -1, 1) * m_Scale;
+                    
 
 
                 }
@@ -70,7 +66,6 @@ public class LookSystem : InputAxisControllerBase<LookSystem.Reader>
             }
         }
 
-        // IInputAxisReader interface: Called by the framework to read the input value
         public float GetValue(UnityEngine.Object context, IInputAxisOwner.AxisDescriptor.Hints hint)
         {
             if (m_Action == null) return 0;
