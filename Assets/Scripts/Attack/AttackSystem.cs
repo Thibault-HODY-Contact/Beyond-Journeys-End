@@ -2,56 +2,80 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class AttackSystem : MonoBehaviour
 {
-    [SerializeField] List<HitBox> ListHitBox;
+    [Serializable]
+    class Attacks
+    {
+        [SerializeField] public List<HitBox> ListHitBox;
+        [SerializeField] public float HitDuration = 0.2f;
+
+    }
+
+    [SerializeField] List<Attacks> ListCombo;
     [SerializeField] bool EnableByDefault = false;
     [SerializeField] int Damage = 10;
 
     [SerializeField] float Cooldown = 0.5f;
-    [SerializeField] float HitDuration = 0.2f;
+    [SerializeField] float ComboCooldown = 1f;
 
     public bool Attacking = false;
 
     public bool StopMovement = false;
 
     float _CooldownTimer = 0;
+    float _ComboCooldownTimer = 0;
+
     float _HitDurationTimer = 0;
 
+    Attacks currentAttack = null;
+
+    int CurrentComboIndex = 0;
 
     void Start()
     {
-        foreach(HitBox Hit in ListHitBox )
+        foreach (Attacks combo in ListCombo)
         {
-            Hit.gameObject.SetActive(EnableByDefault);
-            Hit.EnemyHitted.Clear();
+            foreach (HitBox Hit in combo.ListHitBox)
+            {
+                Hit.gameObject.SetActive(EnableByDefault);
+                Hit.EnemyHitted.Clear();
+            }
         }
 
-
-
+        _CooldownTimer = Cooldown;
     }
 
-    public void Attack()
+    public void Attack(int step)
     {
+        if (Attacking) return;
         Attacking = true;
         StopMovement = true;
+        currentAttack = ListCombo[step];
     }
 
 
     void Update()
     {
-        
-        if( _CooldownTimer < Cooldown)
+        if (!Attacking)
+        {
+            _ComboCooldownTimer += Time.deltaTime;
+            if (_ComboCooldownTimer >= ComboCooldown)
+                CurrentComboIndex = 0;
+        }
+
+        if (_CooldownTimer < Cooldown)
         {
             _CooldownTimer += Time.deltaTime;
-            Attacking = false;
+
         }
         else if (_CooldownTimer >= Cooldown && Attacking)
         {
-            if(_HitDurationTimer < HitDuration)
+            if (_HitDurationTimer < currentAttack.HitDuration)
             {
-                foreach (HitBox Hit in ListHitBox)
+                foreach (HitBox Hit in currentAttack.ListHitBox)
                 {
                     Hit.gameObject.SetActive(true);
                 }
@@ -59,27 +83,26 @@ public class AttackSystem : MonoBehaviour
             }
             else
             {
-                foreach (HitBox Hit in ListHitBox)
+                foreach (HitBox Hit in currentAttack.ListHitBox)
                 {
-                    foreach(GameObject hitted in Hit.EnemyHitted)
+                    foreach (GameObject hitted in Hit.EnemyHitted)
                     {
-                        hitted.GetComponentInChildren<LifeSystem>().TakeDamage(Damage);
+                        if (hitted == null) continue;
+                        LifeSystem life = hitted.GetComponentInChildren<LifeSystem>();
+                        if (life != null) life.TakeDamage(Damage);
                     }
                     Hit.EnemyHitted.Clear();
                     Hit.gameObject.SetActive(false);
-
                 }
                 _CooldownTimer = 0;
                 _HitDurationTimer = 0;
                 Attacking = false;
+
+                CurrentComboIndex = (CurrentComboIndex + 1) % ListCombo.Count;
+                _ComboCooldownTimer = 0;
+                StopMovement = false;
             }
-
-
-
         }
-
-
-
 
     }
 }

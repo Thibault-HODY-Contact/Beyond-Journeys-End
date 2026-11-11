@@ -4,4 +4,5 @@ using UnityEngine;
 public class AttackID : ScriptableObject
 {
     public int ID;
+    public int ComboStep;
 }

@@ -26023,10 +26023,24 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: StartEffect
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: bef6fb677b6424c4ebcfe95fecf304a0, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.53333336
     functionName: Launch
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: 49996c03197197949ba2f5266d2aa323, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.8333333
+    functionName: EndEffect
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: bef6fb677b6424c4ebcfe95fecf304a0, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

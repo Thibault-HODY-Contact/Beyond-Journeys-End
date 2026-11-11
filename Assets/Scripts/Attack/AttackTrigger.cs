@@ -9,7 +9,7 @@ public class AttackTrigger : MonoBehaviour
     public void Launch(AttackID id)
     {
 
-        AttackList[id.ID].Attack();
+        AttackList[id.ID].Attack(id.ComboStep);
     }
 
     public void UnlockMovement(AttackID id)
