@@ -13,6 +13,7 @@ public class AttackSystem : MonoBehaviour
         [SerializeField] public float HitDuration = 0.2f;
 
     }
+    [SerializeField] AttackID _attackID;
 
     [SerializeField] List<Attacks> ListCombo;
     [SerializeField] bool EnableByDefault = false;
@@ -89,7 +90,7 @@ public class AttackSystem : MonoBehaviour
                     {
                         if (hitted == null) continue;
                         LifeSystem life = hitted.GetComponentInChildren<LifeSystem>();
-                        if (life != null) life.TakeDamage(Damage);
+                        if (life != null) life.TakeDamage(Damage , _attackID);
                     }
                     Hit.EnemyHitted.Clear();
                     Hit.gameObject.SetActive(false);

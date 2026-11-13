@@ -5,14 +5,18 @@ using UnityEngine;
 public class HitBox : MonoBehaviour
 {
     public List<GameObject> EnemyHitted;
+    public LayerMask LayerToHit;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (((1 << other.gameObject.layer) & LayerToHit.value) != 0)
         {
-            EnemyHitted.Add(other.transform.root.gameObject);
+            if (!EnemyHitted.Contains(other.transform.root.gameObject))
+            {
 
-            //other.gameObject.GetComponentInChildren<LifeSystem>().TakeDamage(Damage);
+                EnemyHitted.Add(other.transform.root.gameObject);
+            }
+
         }
     }
 }

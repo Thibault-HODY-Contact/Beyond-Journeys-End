@@ -32,9 +32,11 @@ public class LifeSystem : MonoBehaviour
 
     public int MaxHealth => _maxHealth;
     public bool IsDead => _health == 0;
+    public bool HaveParry;
 
     public Action<int, int> OnHeal;
-    public Action<int, int> OnDamage;
+    public Action<int, int , AttackID> OnDamage;
+    public Action< AttackID> OnParry;
     public Action OnDeath;
 
     private void Reset()
@@ -59,15 +61,15 @@ public class LifeSystem : MonoBehaviour
         Health = newHealth;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, AttackID _attackID)
     {
         if (IsDead) return;
-
+        if (HaveParry)
         Debug.Log($"{gameObject.name} took {amount} damage.");
 
         int newHealth = Mathf.Max(Health - amount, 0);
 
-        OnDamage?.Invoke(Health, newHealth);
+        OnDamage?.Invoke(Health, newHealth, _attackID);
 
         Health = newHealth;
 
