@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\player\\playerbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7F7F6D45-7A73-B6AE-49AC-398B1126AED0}|Assembly-CSharp-Editor.csproj|d:\\nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\editor\\frierenrig\\frierenrigsync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F7F6D45-7A73-B6AE-49AC-398B1126AED0}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\frierenrig\\frierenrigsync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|d:\\nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\player\\playerbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,15 +15,15 @@
       "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack\\attacktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|d:\\nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\vfx trigger\\vfxlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\vfx trigger\\vfxlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vfx trigger\\vfxlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|d:\\nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\vfx trigger\\so\\vfxid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\vfx trigger\\so\\vfxid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vfx trigger\\so\\vfxid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|d:\\nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\attack\\so\\attackid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\attack\\so\\attackid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack\\so\\attackid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +46,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "FrierenRigSync.cs",
+              "DocumentMoniker": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\Assets\\Editor\\FrierenRig\\FrierenRigSync.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\FrierenRig\\FrierenRigSync.cs",
+              "ToolTip": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\Assets\\Editor\\FrierenRig\\FrierenRigSync.cs",
+              "RelativeToolTip": "Assets\\Editor\\FrierenRig\\FrierenRigSync.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-14T12:58:35.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AttackID.cs",
               "DocumentMoniker": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\SO\\AttackID.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\SO\\AttackID.cs",
@@ -50,12 +67,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Attack\\SO\\AttackID.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T15:03:53.656Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-11T15:03:53.656Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "VFXID.cs",
               "DocumentMoniker": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\VFX Trigger\\SO\\VFXID.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VFX Trigger\\SO\\VFXID.cs",
@@ -63,12 +79,11 @@
               "RelativeToolTip": "Assets\\Scripts\\VFX Trigger\\SO\\VFXID.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T13:34:49.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-11T13:34:49.572Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "VFXLauncher.cs",
               "DocumentMoniker": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\VFX Trigger\\VFXLauncher.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VFX Trigger\\VFXLauncher.cs",
@@ -76,12 +91,11 @@
               "RelativeToolTip": "Assets\\Scripts\\VFX Trigger\\VFXLauncher.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAowC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T13:34:18.963Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-11T13:34:18.963Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AttackTrigger.cs",
               "DocumentMoniker": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\AttackTrigger.cs",
@@ -89,12 +103,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Attack\\AttackTrigger.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T16:11:00.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-10T16:11:00.174Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerBrain.cs",
               "DocumentMoniker": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\PlayerBrain.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerBrain.cs",
@@ -107,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AttackSystem.cs",
               "DocumentMoniker": "D:\\Nouveau dossier (4)\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\AttackSystem.cs",
@@ -115,8 +128,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Attack\\AttackSystem.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T16:06:56.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-10T16:06:56.394Z"
             }
           ]
         }
