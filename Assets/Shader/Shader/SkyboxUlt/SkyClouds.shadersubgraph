@@ -1556,8 +1556,8 @@
     "m_ObjectId": "3172743284924753bdb541d93dd29ffb",
     "m_Title": "Couches DE Bruits",
     "m_Position": {
-        "x": -1311.0001220703125,
-        "y": -39.0001220703125
+        "x": -1311.0,
+        "y": -39.0
     }
 }
 
@@ -2050,10 +2050,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 861.0000610351563,
-            "y": 251.99996948242188,
+            "x": 1011.0,
+            "y": 238.9999542236328,
             "width": 56.0,
-            "height": 24.0
+            "height": 24.000045776367189
         }
     },
     "m_Slots": [
@@ -3125,8 +3125,8 @@
     "m_ObjectId": "7bbc6a2a63bc45cd8ad317bb7de27d28",
     "m_Title": "ProjectionPlane",
     "m_Position": {
-        "x": -789.0000610351563,
-        "y": -640.0000610351563
+        "x": -789.0,
+        "y": -640.0
     }
 }
 
@@ -4858,10 +4858,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 1660.0001220703125,
-            "y": 427.9999694824219,
+            "x": 1597.0,
+            "y": 514.0,
             "width": 55.9998779296875,
-            "height": 24.0
+            "height": 23.99993896484375
         }
     },
     "m_Slots": [
@@ -4888,7 +4888,7 @@
     "m_ObjectId": "ec7132f4b20143bf82af609a9c12b067",
     "m_Title": "Forme nuages",
     "m_Position": {
-        "x": 858.0001220703125,
+        "x": 858.0,
         "y": 523.0
     }
 }
