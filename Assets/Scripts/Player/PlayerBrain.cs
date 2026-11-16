@@ -1,6 +1,10 @@
+using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class PlayerBrain : MonoBehaviour
 {
@@ -10,12 +14,19 @@ public class PlayerBrain : MonoBehaviour
 
     [SerializeField] InputActionReference _Attack1Input;
 
+    [SerializeField] InputActionReference _UltimateInput;
+
+
     [SerializeField] Animator _animator;
 
     [SerializeField] Movement _moveSystem;
     [SerializeField] JumpSystem _jumpSystem;
 
     [SerializeField] AttackSystem _Attack1;
+    [SerializeField] AttackSystem _UltimateAttack;
+    [SerializeField] List<PlayableDirector> _PlayerDirectors;
+    [SerializeField] List<TimelineAsset> _UltimesTimeLines;
+
     Vector2 _moveInput;
 
 
@@ -53,7 +64,17 @@ public class PlayerBrain : MonoBehaviour
 
         }
 
+        if (_Attack1Input != null)
+        {
+
+            _UltimateInput.action.performed += UpdateUltimateAttack;
+            _UltimateInput.action.canceled += UpdateUltimateAttack;
+
+        }
+
     }
+
+
     private void OnDestroy()
     {
         if (_movementInput == null) return;
@@ -72,6 +93,10 @@ public class PlayerBrain : MonoBehaviour
         if (_Attack1Input == null) return;
         _Attack1Input.action.performed -= UpdateAttack1;
         _Attack1Input.action.canceled -= UpdateAttack1;
+
+        if (_Attack1Input == null) return;
+        _UltimateInput.action.performed -= UpdateUltimateAttack;
+        _UltimateInput.action.canceled -= UpdateUltimateAttack;
 
     }
 
@@ -107,5 +132,17 @@ public class PlayerBrain : MonoBehaviour
             _animator.SetTrigger("Attack1");
             _Attack1.StopMovement = true;          
         }
+    }
+    private void UpdateUltimateAttack(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded)
+        {
+            for (int i = 0; i < _PlayerDirectors.Count; i++)
+            {
+                _PlayerDirectors[i].playableAsset = _UltimesTimeLines[i];
+                _PlayerDirectors[i].Play();
+            }
+        }
+
     }
 }
