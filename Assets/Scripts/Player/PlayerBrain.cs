@@ -10,12 +10,17 @@ public class PlayerBrain : MonoBehaviour
 
     [SerializeField] InputActionReference _Attack1Input;
 
+    [SerializeField] InputActionReference _spell1Input;
+
     [SerializeField] Animator _animator;
 
     [SerializeField] Movement _moveSystem;
     [SerializeField] JumpSystem _jumpSystem;
 
     [SerializeField] AttackSystem _Attack1;
+
+    [SerializeField] AttackSystem _spell1;
+
     Vector2 _moveInput;
 
 
@@ -53,6 +58,12 @@ public class PlayerBrain : MonoBehaviour
 
         }
 
+        if (_spell1Input != null)
+        {
+            _spell1Input.action.performed += UpdateSpell1;
+            _spell1Input.action.canceled += UpdateSpell1;
+        }
+
     }
     private void OnDestroy()
     {
@@ -73,6 +84,9 @@ public class PlayerBrain : MonoBehaviour
         _Attack1Input.action.performed -= UpdateAttack1;
         _Attack1Input.action.canceled -= UpdateAttack1;
 
+        if (_spell1Input == null) return;
+        _spell1Input.action.performed -= UpdateSpell1;
+        _spell1Input.action.canceled -= UpdateSpell1;
     }
 
     void UpdateMove(InputAction.CallbackContext context)
@@ -106,6 +120,15 @@ public class PlayerBrain : MonoBehaviour
         {
             _animator.SetTrigger("Attack1");
             _Attack1.StopMovement = true;          
+        }
+    }
+
+    void UpdateSpell1(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded)
+        {
+            _animator.SetTrigger("Spell1");
+            _spell1.StopMovement = true;  
         }
     }
 }
