@@ -91,13 +91,18 @@ public class PlayerBrain : MonoBehaviour
 
     void UpdateMove(InputAction.CallbackContext context)
     {
+        if (_Attack1.StopMovement || _spell1.StopMovement)
+            return;
+
         _moveInput = context.ReadValue<Vector2>(); 
     }
 
     void Update()
     {
         if (_Attack1.StopMovement)
-            _moveSystem.MoveDirection = Vector2.zero; 
+            _moveSystem.MoveDirection = Vector2.zero;
+        if (_spell1.StopMovement)
+            _moveSystem.MoveDirection = Vector2.zero;
         else
             _moveSystem.MoveDirection = _moveInput;   
     }
@@ -125,7 +130,7 @@ public class PlayerBrain : MonoBehaviour
 
     void UpdateSpell1(InputAction.CallbackContext context)
     {
-        if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded)
+        if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded && _spell1.CanAttack)
         {
             _animator.SetTrigger("Spell1");
             _spell1.StopMovement = true;  

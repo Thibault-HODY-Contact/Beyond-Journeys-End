@@ -54,9 +54,8 @@ public class OnDamageFeedBack : MonoBehaviour
         
     }
 
-    virtual public void StartDamageFeedback( AttackID attackID)
+    virtual public void StartDamageFeedback(AttackID attackID)
     {
-
         if (!_lifeSystem.HaveParry)
         {
         

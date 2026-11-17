@@ -26,6 +26,8 @@ public class AttackSystem : MonoBehaviour
 
     public bool StopMovement = false;
 
+    public bool CanAttack = false;
+
     float _CooldownTimer = 0;
     float _ComboCooldownTimer = 0;
 
@@ -46,6 +48,7 @@ public class AttackSystem : MonoBehaviour
             }
         }
 
+        CanAttack = true;
         _CooldownTimer = Cooldown;
     }
 
@@ -65,15 +68,19 @@ public class AttackSystem : MonoBehaviour
             _ComboCooldownTimer += Time.deltaTime;
             if (_ComboCooldownTimer >= ComboCooldown)
                 CurrentComboIndex = 0;
+
+            if (_CooldownTimer > Cooldown)
+                CanAttack = true;
         }
 
         if (_CooldownTimer < Cooldown)
         {
             _CooldownTimer += Time.deltaTime;
-
         }
         else if (_CooldownTimer >= Cooldown && Attacking)
         {
+            CanAttack = false;
+
             if (_HitDurationTimer < currentAttack.HitDuration)
             {
                 foreach (HitBox Hit in currentAttack.ListHitBox)
@@ -92,6 +99,7 @@ public class AttackSystem : MonoBehaviour
                         LifeSystem life = hitted.GetComponentInChildren<LifeSystem>();
                         if (life != null) life.TakeDamage(Damage , _attackID);
                     }
+
                     Hit.EnemyHitted.Clear();
                     Hit.gameObject.SetActive(false);
                 }
@@ -101,9 +109,7 @@ public class AttackSystem : MonoBehaviour
 
                 CurrentComboIndex = (CurrentComboIndex + 1) % ListCombo.Count;
                 _ComboCooldownTimer = 0;
-                StopMovement = false;
             }
         }
-
     }
 }
