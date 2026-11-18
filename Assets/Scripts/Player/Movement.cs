@@ -17,9 +17,48 @@ public class Movement : MonoBehaviour
     public Vector2 MoveDirection { get; set; }
 
     public bool isRunning { get; set; }
+
+    Rigidbody _rb;
+    const float Skin = 0.02f;
+
     private void Reset()
     {
         _rootTransform = transform.root;
+    }
+
+    private void Awake()
+    {
+        _rb = _rootTransform.GetComponentInChildren<Rigidbody>();
+
+    }
+
+    void MoveRoot(Vector3 localMove)
+    {
+        Vector3 move = _rootTransform.TransformDirection(localMove);
+
+        if (_rb != null)
+        {
+            for (int i = 0; i < 2 && move.sqrMagnitude > 1e-8f; i++)  
+            {
+                Physics.SyncTransforms();                               
+                float dist = move.magnitude;
+                Vector3 dir = move / dist;
+
+                if (!_rb.SweepTest(dir, out RaycastHit hit, dist + Skin, QueryTriggerInteraction.Ignore))
+                    break;                                               
+                if (hit.normal.y > 0.5f)
+                    break;                                               
+
+                float allowed = Mathf.Max(hit.distance - Skin, 0f);
+                _rootTransform.position += dir * allowed;                
+
+                Vector3 n = new Vector3(hit.normal.x, 0f, hit.normal.z).normalized;
+                move -= dir * allowed;
+                move -= n * Vector3.Dot(move, n);                     
+            }
+        }
+
+        _rootTransform.position += move;
     }
 
     void Update()
@@ -56,11 +95,11 @@ public class Movement : MonoBehaviour
 
         if (!isRunning)
         {
-            _rootTransform.Translate(new Vector3(MoveDirection.x, 0f, MoveDirection.y) * _speed * Time.deltaTime, Space.Self);
-        }else if (isRunning)
+            MoveRoot(new Vector3(MoveDirection.x, 0f, MoveDirection.y) * _speed * Time.unscaledDeltaTime);
+        }
+        else
         {
-            _rootTransform.Translate(new Vector3(0f, 0f, MoveDirection.y) * _RunSpeed * Time.deltaTime, Space.Self);
-
+            MoveRoot(new Vector3(0f, 0f, MoveDirection.y) * _RunSpeed * Time.unscaledDeltaTime);
         }
 
 

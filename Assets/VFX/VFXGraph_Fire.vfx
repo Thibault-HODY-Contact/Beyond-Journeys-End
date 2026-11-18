@@ -562,7 +562,7 @@ VisualEffectResource:
       motionVectorGenerationMode: 0
       shadowCastingMode: 0
     m_CullingFlags: 3
-    m_UpdateMode: 0
+    m_UpdateMode: 2
     m_PreWarmDeltaTime: 0.05
     m_PreWarmStepCount: 0
     m_InitialEventName: OnPlay
@@ -7405,7 +7405,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1704, y: 370}
+  m_UIPosition: {x: 1667, y: 366}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
