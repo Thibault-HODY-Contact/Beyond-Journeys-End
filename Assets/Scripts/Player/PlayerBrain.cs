@@ -101,7 +101,7 @@ public class PlayerBrain : MonoBehaviour
     {
         if (_Attack1.StopMovement)
             _moveSystem.MoveDirection = Vector2.zero;
-        if (_spell1.StopMovement)
+        else if (_spell1.StopMovement)
             _moveSystem.MoveDirection = Vector2.zero;
         else
             _moveSystem.MoveDirection = _moveInput;   

@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 553fda83cc1bcb94499eda66a207da46, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -55,14 +55,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 3.18
+    - _FresnelPower: 10
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _UsingBackFaces: 1
     - _VertexFrequency: 1
     m_Colors:
-    - _BackColor: {r: 0.0036044838, g: 0.008271887, b: 0.084905654, a: 1}
-    - _FresnelColor: {r: 1.9622641, g: 0.33701384, b: 0, a: 1}
-    - _FrontColor: {r: 0.034175802, g: 2.4150944, b: 1.6509544, a: 1}
+    - _BackColor: {r: 0.11534348, g: 0.26470038, b: 2.716981, a: 1}
+    - _FresnelColor: {r: 502.33978, g: 86.27557, b: 0, a: 1}
+    - _FrontColor: {r: 1.0936257, g: 77.28302, b: 52.83054, a: 1}
     - _VertexAmount: {r: 0.001, g: 0.001, b: 0.001, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
