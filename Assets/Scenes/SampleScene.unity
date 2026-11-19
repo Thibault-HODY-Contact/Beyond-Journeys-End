@@ -1054,6 +1054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 314668212}
   - component: {fileID: 314668211}
+  - component: {fileID: 314668213}
   m_Layer: 0
   m_Name: TimeManager
   m_TagString: Untagged
@@ -1073,7 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee08a1d7c4e9f748a72164e24acc836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
-  GamePaused: 0
+  GamePaused: 0.99
 --- !u!4 &314668212
 Transform:
   m_ObjectHideFlags: 0
@@ -1089,6 +1090,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &314668213
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314668210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &329407063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1232,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.29355535, y: -0.15382648, z: 0.047923367, w: 0.94226646}
-  m_LocalPosition: {x: -0.9428201, y: 3.71, z: 609.2757}
+  m_LocalPosition: {x: 22.197182, y: 3.503529, z: -88.93293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20290,11 +20313,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 29964607de84ce94882c0a133a4124a6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 356.52948
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29964607de84ce94882c0a133a4124a6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 356.5294
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29964607de84ce94882c0a133a4124a6, type: 3}
       propertyPath: m_LocalScale.z
@@ -20302,7 +20325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29964607de84ce94882c0a133a4124a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000005899
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29964607de84ce94882c0a133a4124a6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -45958,6 +45981,8 @@ PlayableDirector:
     value: {fileID: 379121513}
   - key: {fileID: 5373448078143917463, guid: ba51432a86cb223488dbd4465ae1d81a, type: 2}
     value: {fileID: 1605014641}
+  - key: {fileID: -157251851614521864, guid: ba51432a86cb223488dbd4465ae1d81a, type: 2}
+    value: {fileID: 314668213}
   m_ExposedReferences:
     m_References:
     - 7869bee4041d8c849998fb0ef29bb964: {fileID: 1175373253}
