@@ -37,9 +37,18 @@ public class PlayerBrain : MonoBehaviour
 
     Vector2 _moveInput;
 
+    
+    Dictionary<Transform, Quaternion> _timelineRestRotations = new Dictionary<Transform, Quaternion>();
+
 
     void Start()
     {
+        foreach (var director in _PlayerDirectors)
+        {
+            if (director != null)
+                director.stopped += OnTimelineStopped;
+        }
+
         if (_movementInput != null)
         {
 
@@ -103,6 +112,12 @@ public class PlayerBrain : MonoBehaviour
 
     private void OnDestroy()
     {
+        foreach (var director in _PlayerDirectors)
+        {
+            if (director != null)
+                director.stopped -= OnTimelineStopped;
+        }
+
         if (_movementInput == null) return;
 
         _movementInput.action.performed -= UpdateMove;
@@ -175,13 +190,54 @@ public class PlayerBrain : MonoBehaviour
     {
         if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded)
         {
+            if (AnyTimelinePlaying()) return;
+
             for (int i = 0; i < _PlayerDirectors.Count; i++)
             {
-                _PlayerDirectors[i].playableAsset = _UltimesTimeLines[i];
-                _PlayerDirectors[i].Play();
+                PlayTimeline(_PlayerDirectors[i], _UltimesTimeLines[i]);
             }
         }
 
+    }
+
+    bool AnyTimelinePlaying()
+    {
+        foreach (var director in _PlayerDirectors)
+        {
+            if (director != null && director.state == PlayState.Playing)
+                return true;
+        }
+        return false;
+    }
+
+    void PlayTimeline(PlayableDirector director, TimelineAsset timeline)
+    {
+        director.playableAsset = timeline;
+
+        foreach (var output in timeline.outputs)
+        {
+            if (director.GetGenericBinding(output.sourceObject) is Animator anim && anim != null
+                && !_timelineRestRotations.ContainsKey(anim.transform))
+            {
+                _timelineRestRotations[anim.transform] = anim.transform.localRotation;
+            }
+        }
+
+        director.Play();
+    }
+
+    void OnTimelineStopped(PlayableDirector director)
+    {
+        if (!(director.playableAsset is TimelineAsset timeline)) return;
+
+        foreach (var output in timeline.outputs)
+        {
+            if (director.GetGenericBinding(output.sourceObject) is Animator anim && anim != null
+                && _timelineRestRotations.TryGetValue(anim.transform, out var restRotation))
+            {
+                anim.transform.localRotation = restRotation;
+            }
+        }
     }
 
 
@@ -205,10 +261,10 @@ public class PlayerBrain : MonoBehaviour
     private void UpdateTimeStopInput(InputAction.CallbackContext context)
     {
         if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded)
-        {            
-            _PlayerDirectors[0].playableAsset = _TimeStopTimeLine;
-            _PlayerDirectors[0].Play();
-            
+        {
+            if (AnyTimelinePlaying()) return;
+
+            PlayTimeline(_PlayerDirectors[0], _TimeStopTimeLine);
         }
     }
 }

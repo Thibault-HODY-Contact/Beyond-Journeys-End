@@ -110,43 +110,48 @@ public class OnDamageFeedBack : MonoBehaviour
     virtual public void EndFeedback()
     {
         if (!_lifeSystem.HaveParry && _lastAttack)
-        {
-            var found = _damageFeedback.FirstOrDefault(i => i.ID == _lastAttack);
-            if (found == null)
+        {   
+            foreach(var found in _damageFeedback)
             {
-                return;
-            }
+                if (found == null)
+                {
+                    return;
+                }
 
-            foreach (var ps in found.ParticleSystems)
-            {
-                ps.Stop();
-            }
-            foreach (var vfx in found.VisualEffects)
-            {
-                vfx.Stop();
+                foreach (var ps in found.ParticleSystems)
+                {
+                    ps.Stop();
+                }
+                foreach (var vfx in found.VisualEffects)
+                {
+                    vfx.Stop();
 
+                }
+                if (found._TimeLine)
+                {
+                    _PlayableDirector.Stop();
+                }
             }
-            if (found._TimeLine)
-            {
-                _PlayableDirector.Stop();
-            }
+           
 
         }
         else if (_lastAttack)
         {
-            var found = _parryFeedBack.FirstOrDefault(i => i.ID == _lastAttack);
-            if (found == null)
+            foreach (var found in _damageFeedback)
             {
-                return;
-            }
-            foreach (var ps in found.ParticleSystems)
-            {
-                ps.Stop();
-            }
-            foreach (var vfx in found.VisualEffects)
-            {
-                vfx.Stop();
+                if (found == null)
+                {
+                    return;
+                }
+                foreach (var ps in found.ParticleSystems)
+                {
+                    ps.Stop();
+                }
+                foreach (var vfx in found.VisualEffects)
+                {
+                    vfx.Stop();
 
+                }
             }
         }
     }
