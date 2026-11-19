@@ -15,6 +15,7 @@ public class PlayerBrain : MonoBehaviour
     [SerializeField] InputActionReference _Attack1Input;
 
     [SerializeField] InputActionReference _UltimateInput;
+    [SerializeField] InputActionReference _TimeStopInput;
 
     [SerializeField] InputActionReference _spell1Input;
 
@@ -24,9 +25,10 @@ public class PlayerBrain : MonoBehaviour
     [SerializeField] JumpSystem _jumpSystem;
 
     [SerializeField] AttackSystem _Attack1;
-    [SerializeField] AttackSystem _UltimateAttack;
+    [SerializeField] AttackSystem _UltimateAttack; 
     [SerializeField] List<PlayableDirector> _PlayerDirectors;
     [SerializeField] List<TimelineAsset> _UltimesTimeLines;
+    [SerializeField] TimelineAsset _TimeStopTimeLine;
 
     [SerializeField] AttackSystem _spell1;
 
@@ -70,7 +72,7 @@ public class PlayerBrain : MonoBehaviour
 
         }
 
-        if (_Attack1Input != null)
+        if (_UltimateInput != null)
         {
 
             _UltimateInput.action.performed += UpdateUltimateAttack;
@@ -87,8 +89,17 @@ public class PlayerBrain : MonoBehaviour
         {
             _shieldInput.action.performed += UpdateShield;
         }
+        if (_TimeStopInput != null)
+        {
+
+            _TimeStopInput.action.performed += UpdateTimeStopInput;
+            _TimeStopInput.action.canceled += UpdateTimeStopInput;
+
+        }
+
     }
 
+    
 
     private void OnDestroy()
     {
@@ -109,7 +120,7 @@ public class PlayerBrain : MonoBehaviour
         _Attack1Input.action.performed -= UpdateAttack1;
         _Attack1Input.action.canceled -= UpdateAttack1;
 
-        if (_Attack1Input == null) return;
+        if (_UltimateInput == null) return;
         _UltimateInput.action.performed -= UpdateUltimateAttack;
         _UltimateInput.action.canceled -= UpdateUltimateAttack;
 
@@ -119,6 +130,9 @@ public class PlayerBrain : MonoBehaviour
 
         if (_shieldInput != null)
             _shieldInput.action.performed -= UpdateShield;
+        if (_TimeStopInput == null) return;
+        _TimeStopInput.action.performed -= UpdateTimeStopInput;
+        _TimeStopInput.action.canceled -= UpdateTimeStopInput;
     }
 
     void UpdateMove(InputAction.CallbackContext context)
@@ -186,6 +200,15 @@ public class PlayerBrain : MonoBehaviour
         {
             if(_shieldSystem.CanShield) _animator.SetTrigger("Shield");
             _shieldSystem.ActivateShield();
+        }
+    }
+    private void UpdateTimeStopInput(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded)
+        {            
+            _PlayerDirectors[0].playableAsset = _TimeStopTimeLine;
+            _PlayerDirectors[0].Play();
+            
         }
     }
 }

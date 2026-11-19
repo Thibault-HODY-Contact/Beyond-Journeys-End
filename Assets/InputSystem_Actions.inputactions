@@ -125,6 +125,15 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },{
+                    "name": "TimeStop",
+                    "type": "Button",
+                    "id": "f9870f36-222d-4dde-bbd6-30d8fbb5820b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -548,6 +557,17 @@
                 },
                 {
                     "name": "",
+                    "id": "8ebe921d-8914-4d7d-b24a-96ded66aaab6",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TimeStop",
+                     "isComposite": false,
+                    "isPartOfComposite": false
+                }
+                {
+                    "name": "",
                     "id": "50651c3f-c364-447a-9aa3-7a017c3ee16c",
                     "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
@@ -576,6 +596,17 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Spell1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4601b599-2fc4-46cf-a543-3af499cec51f",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TimeStop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

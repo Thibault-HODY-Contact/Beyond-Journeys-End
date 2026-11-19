@@ -27,7 +27,7 @@ public class JumpSystem : MonoBehaviour
 
     void Update()
     {
-        if(Jump && canJump)
+        if (Jump && canJump && Time.timeScale > .5f) 
         {
             _animator.SetTrigger("Jumped");
             
@@ -43,7 +43,7 @@ public class JumpSystem : MonoBehaviour
 
         if(!canJump&& timer < Cooldown)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
         }else if(!canJump && timer >= Cooldown&& isGrounded)
         {
             timer = 0;
