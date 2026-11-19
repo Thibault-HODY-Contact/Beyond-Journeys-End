@@ -16,6 +16,7 @@ public class PlayerBrain : MonoBehaviour
 
     [SerializeField] InputActionReference _UltimateInput;
 
+    [SerializeField] InputActionReference _spell1Input;
 
     [SerializeField] Animator _animator;
 
@@ -26,6 +27,11 @@ public class PlayerBrain : MonoBehaviour
     [SerializeField] AttackSystem _UltimateAttack;
     [SerializeField] List<PlayableDirector> _PlayerDirectors;
     [SerializeField] List<TimelineAsset> _UltimesTimeLines;
+
+    [SerializeField] AttackSystem _spell1;
+
+    [SerializeField] ShieldSystem _shieldSystem;
+    [SerializeField] InputActionReference _shieldInput;
 
     Vector2 _moveInput;
 
@@ -70,6 +76,15 @@ public class PlayerBrain : MonoBehaviour
             _UltimateInput.action.performed += UpdateUltimateAttack;
             _UltimateInput.action.canceled += UpdateUltimateAttack;
 
+        if (_spell1Input != null)
+        {
+            _spell1Input.action.performed += UpdateSpell1;
+            _spell1Input.action.canceled += UpdateSpell1;
+        }
+
+        if (_shieldInput != null)
+        {
+            _shieldInput.action.performed += UpdateShield;
         }
 
     }
@@ -98,19 +113,28 @@ public class PlayerBrain : MonoBehaviour
         _UltimateInput.action.performed -= UpdateUltimateAttack;
         _UltimateInput.action.canceled -= UpdateUltimateAttack;
 
+        if (_spell1Input == null) return;
+        _spell1Input.action.performed -= UpdateSpell1;
+        _spell1Input.action.canceled -= UpdateSpell1;
+
+        if (_shieldInput != null)
+            _shieldInput.action.performed -= UpdateShield;
     }
 
     void UpdateMove(InputAction.CallbackContext context)
     {
+        if (_Attack1.StopMovement || _spell1.StopMovement || _shieldSystem.StopMovement)
+            return;
+
         _moveInput = context.ReadValue<Vector2>(); 
     }
 
     void Update()
     {
-        if (_Attack1.StopMovement)
-            _moveSystem.MoveDirection = Vector2.zero; 
+        if (_Attack1.StopMovement || _spell1.StopMovement || _shieldSystem.StopMovement)
+            _moveSystem.MoveDirection = Vector2.zero;
         else
-            _moveSystem.MoveDirection = _moveInput;   
+            _moveSystem.MoveDirection = _moveInput;
     }
 
 
@@ -144,5 +168,24 @@ public class PlayerBrain : MonoBehaviour
             }
         }
 
+    }
+}
+
+    void UpdateSpell1(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPressedThisFrame() && !_jumpSystem.Jump && _jumpSystem.isGrounded && _spell1.CanAttack)
+        {
+            _animator.SetTrigger("Spell1");
+            _spell1.StopMovement = true;  
+        }
+    }
+
+    void UpdateShield(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPressedThisFrame())
+        {
+            if(_shieldSystem.CanShield) _animator.SetTrigger("Shield");
+            _shieldSystem.ActivateShield();
+        }
     }
 }

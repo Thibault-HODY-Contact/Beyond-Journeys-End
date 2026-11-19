@@ -6,6 +6,8 @@ public class LifeSystem : MonoBehaviour
     [SerializeField, Min(0)] int _maxHealth = 100;
     [SerializeField] int _health = 100;
 
+    [SerializeField] ShieldSystem _shieldSystem;
+
     public int Health
     {
         get => _health;
@@ -63,6 +65,9 @@ public class LifeSystem : MonoBehaviour
 
     public void TakeDamage(int amount, AttackID _attackID)
     {
+        if (_shieldSystem != null && _shieldSystem.IsShieldActive)
+            return;
+
         if (IsDead) return;
         if (HaveParry)
         Debug.Log($"{gameObject.name} took {amount} damage.");
