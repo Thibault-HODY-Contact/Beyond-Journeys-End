@@ -76,7 +76,7 @@ public class LifeSystem : MonoBehaviour
 
         OnDamage?.Invoke(Health, newHealth, _attackID);
 
-        Health = newHealth;
+        //Health = newHealth;
 
         Debug.Log($"{gameObject.name} health is now {Health}.");
     }
