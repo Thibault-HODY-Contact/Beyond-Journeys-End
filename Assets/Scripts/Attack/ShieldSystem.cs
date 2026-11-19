@@ -9,6 +9,10 @@ public class ShieldSystem : MonoBehaviour
     [SerializeField] float _cooldown = 5f;
     [SerializeField] float _spawnDuration = 0.5f;
 
+
+    public AudioClip _AudioClip;
+    [SerializeField] AudioSource _audioSource;
+
     public bool IsShieldActive = false;
     public bool CanShield = true;
     public bool StopMovement = false;
@@ -70,6 +74,11 @@ public class ShieldSystem : MonoBehaviour
             _shieldObject.transform.localScale = Vector3.zero;
 
             _spawnCoroutine = StartCoroutine(SpawnShield());
+        }
+        if (_AudioClip != null)
+        {
+            _audioSource.clip = _AudioClip;
+            _audioSource.Play();
         }
     }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.VFX;
 
 public class VFXLauncher : MonoBehaviour
@@ -12,10 +13,11 @@ public class VFXLauncher : MonoBehaviour
         public VFXID ID;
         public List<ParticleSystem> ParticleSystems;
         public List<VisualEffect> VisualEffects;
-
+        public AudioClip _AudioClip;
     }
 
     [SerializeField] List<VFX> _effects;
+    [SerializeField] AudioSource _audioSource;
 
     public void StartEffect(VFXID id)
     {
@@ -35,6 +37,11 @@ public class VFXLauncher : MonoBehaviour
             vfx.Play();
             
         }
+        if(found._AudioClip != null)
+        {
+            _audioSource.clip =found._AudioClip;
+            _audioSource.Play();
+        }
     }
 
     public void EndEffect(VFXID id)
@@ -53,6 +60,10 @@ public class VFXLauncher : MonoBehaviour
         {
             vfx.Stop();
 
+        }
+        if (found._AudioClip != null)
+        {
+            _audioSource.Stop();
         }
     }
 }

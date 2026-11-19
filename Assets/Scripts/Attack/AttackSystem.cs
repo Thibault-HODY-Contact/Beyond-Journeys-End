@@ -12,7 +12,10 @@ public class AttackSystem : MonoBehaviour
         [SerializeField] public List<HitBox> ListHitBox;
         [SerializeField] public List<GameObject> ObjectsToActivate;
         [SerializeField] public float HitDuration = 0.2f;
+        public AudioClip _AudioClip;
+
     }
+    [SerializeField] AudioSource _audioSource;
 
     [SerializeField] AttackID _attackID;
 
@@ -91,7 +94,11 @@ public class AttackSystem : MonoBehaviour
             if (obj != null)
                 obj.SetActive(true);
         }
-
+        if (currentAttack._AudioClip != null)
+        {
+            _audioSource.clip = currentAttack._AudioClip;
+            _audioSource.Play();
+        }
         _spawnCoroutine = StartCoroutine(SpawnObjects());
     }
 
