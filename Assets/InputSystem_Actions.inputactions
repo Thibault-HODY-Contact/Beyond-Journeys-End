@@ -563,9 +563,9 @@
                     "processors": "",
                     "groups": "",
                     "action": "TimeStop",
-                     "isComposite": false,
+                    "isComposite": false,
                     "isPartOfComposite": false
-                }
+                },
                 {
                     "name": "",
                     "id": "50651c3f-c364-447a-9aa3-7a017c3ee16c",

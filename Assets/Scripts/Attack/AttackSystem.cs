@@ -107,7 +107,7 @@ public class AttackSystem : MonoBehaviour
 
         while (timer < _spawnDuration)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
 
             float t = Mathf.Clamp01(timer / _spawnDuration);
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
