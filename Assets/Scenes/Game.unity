@@ -1231,7 +1231,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 50
+  field of view: 49
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -47084,7 +47084,7 @@ PlayableDirector:
   m_GameObject: {fileID: 5414618209040725045}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: ba51432a86cb223488dbd4465ae1d81a, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 37d910fbc4077804dbbe21b129d36487, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 2
