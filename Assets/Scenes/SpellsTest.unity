@@ -5231,6 +5231,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c544a45cb72f3247bc818c068def928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _shieldObject: {fileID: 1261072116}
+  _shieldDuration: 2
+  _cooldown: 5
+  _spawnDuration: 0.5
+  IsShieldActive: 0
+  CanShield: 1
+  StopMovement: 0
 --- !u!1 &174184569
 GameObject:
   m_ObjectHideFlags: 0
@@ -11747,14 +11754,14 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 75cd7fba63f3070468c387b416763c1b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9c1c4cbfb6623bb41a3ce4b02d825e67, type: 2}
+      objectReference: {fileID: 2100000, guid: 25cdc0708fbb0b4459369622b1732854, type: 2}
     - target: {fileID: 919132149155446097, guid: 75cd7fba63f3070468c387b416763c1b, type: 3}
       propertyPath: m_Name
       value: Shield2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 75cd7fba63f3070468c387b416763c1b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17684,7 +17691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2c751f55dcb2b54448daf369d0432bf8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17694,6 +17701,11 @@ PrefabInstance:
 --- !u!4 &1241005343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c751f55dcb2b54448daf369d0432bf8, type: 3}
+  m_PrefabInstance: {fileID: 1241005342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1261072116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c751f55dcb2b54448daf369d0432bf8, type: 3}
   m_PrefabInstance: {fileID: 1241005342}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1261480432
@@ -29114,11 +29126,14 @@ MonoBehaviour:
   ListCombo:
   - ListHitBox:
     - {fileID: 1052610911}
+    ObjectsToActivate:
+    - {fileID: 1054608494}
     HitDuration: 0.1
   EnableByDefault: 0
   Damage: 10
   Cooldown: 5
   ComboCooldown: 1
+  _spawnDuration: 0.75
   Attacking: 0
   StopMovement: 0
   CanAttack: 0
@@ -29551,14 +29566,17 @@ MonoBehaviour:
   ListCombo:
   - ListHitBox:
     - {fileID: 6037557851666480871}
+    ObjectsToActivate: []
     HitDuration: 0.2
   - ListHitBox:
     - {fileID: 2069229654}
+    ObjectsToActivate: []
     HitDuration: 0.2
   EnableByDefault: 0
   Damage: 10
   Cooldown: 0.1
   ComboCooldown: 2
+  _spawnDuration: 0.5
   Attacking: 0
   StopMovement: 0
   CanAttack: 0
@@ -30912,7 +30930,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackTrigger
   AttackList:
   - {fileID: 888036893599182100}
-  _objectsToActivateList: []
 --- !u!4 &4095912238906450622
 Transform:
   m_ObjectHideFlags: 0
@@ -32704,9 +32721,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100706789}
     - target: {fileID: 3365682284630578381, guid: 4f39c909578e4694f90f672597ce2a69, type: 3}
+      propertyPath: _shieldInput
+      value: 
+      objectReference: {fileID: -364624483201744178, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 3365682284630578381, guid: 4f39c909578e4694f90f672597ce2a69, type: 3}
       propertyPath: _spell1Input
       value: 
       objectReference: {fileID: 6839762822148458652, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 3365682284630578381, guid: 4f39c909578e4694f90f672597ce2a69, type: 3}
+      propertyPath: _shieldSystem
+      value: 
+      objectReference: {fileID: 168889380}
     - target: {fileID: 3418843349409989374, guid: 4f39c909578e4694f90f672597ce2a69, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -29.948132
@@ -34465,6 +34490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LifeSystem
   _maxHealth: 100
   _health: 100
+  _shieldSystem: {fileID: 0}
   HaveParry: 0
 --- !u!4 &5912168384297131182
 Transform:

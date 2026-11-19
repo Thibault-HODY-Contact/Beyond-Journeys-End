@@ -21,6 +21,9 @@ public class PlayerBrain : MonoBehaviour
 
     [SerializeField] AttackSystem _spell1;
 
+    [SerializeField] ShieldSystem _shieldSystem;
+    [SerializeField] InputActionReference _shieldInput;
+
     Vector2 _moveInput;
 
 
@@ -64,6 +67,11 @@ public class PlayerBrain : MonoBehaviour
             _spell1Input.action.canceled += UpdateSpell1;
         }
 
+        if (_shieldInput != null)
+        {
+            _shieldInput.action.performed += UpdateShield;
+        }
+
     }
     private void OnDestroy()
     {
@@ -87,11 +95,14 @@ public class PlayerBrain : MonoBehaviour
         if (_spell1Input == null) return;
         _spell1Input.action.performed -= UpdateSpell1;
         _spell1Input.action.canceled -= UpdateSpell1;
+
+        if (_shieldInput != null)
+            _shieldInput.action.performed -= UpdateShield;
     }
 
     void UpdateMove(InputAction.CallbackContext context)
     {
-        if (_Attack1.StopMovement || _spell1.StopMovement)
+        if (_Attack1.StopMovement || _spell1.StopMovement || _shieldSystem.StopMovement)
             return;
 
         _moveInput = context.ReadValue<Vector2>(); 
@@ -99,12 +110,10 @@ public class PlayerBrain : MonoBehaviour
 
     void Update()
     {
-        if (_Attack1.StopMovement)
-            _moveSystem.MoveDirection = Vector2.zero;
-        else if (_spell1.StopMovement)
+        if (_Attack1.StopMovement || _spell1.StopMovement || _shieldSystem.StopMovement)
             _moveSystem.MoveDirection = Vector2.zero;
         else
-            _moveSystem.MoveDirection = _moveInput;   
+            _moveSystem.MoveDirection = _moveInput;
     }
 
 
@@ -134,6 +143,15 @@ public class PlayerBrain : MonoBehaviour
         {
             _animator.SetTrigger("Spell1");
             _spell1.StopMovement = true;  
+        }
+    }
+
+    void UpdateShield(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPressedThisFrame())
+        {
+            if(_shieldSystem.CanShield) _animator.SetTrigger("Shield");
+            _shieldSystem.ActivateShield();
         }
     }
 }

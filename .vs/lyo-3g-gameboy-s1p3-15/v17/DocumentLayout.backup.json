@@ -1,34 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\",
+  "WorkspaceRootPath": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|c:\\users\\jlefevre\\documents\\github\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\player\\playerbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|a:\\cours\\gtech3\\3c\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\attack\\shieldsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack\\shieldsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|c:\\users\\jlefevre\\documents\\github\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\player\\ondamagefeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\ondamagefeedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|a:\\cours\\gtech3\\3c\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\attack\\attacktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack\\attacktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|c:\\users\\jlefevre\\documents\\github\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\player\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|a:\\cours\\gtech3\\3c\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\player\\lifesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\lifesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|c:\\users\\jlefevre\\documents\\github\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\attack\\hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack\\hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\vfx trigger\\vfxlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vfx trigger\\vfxlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\attack\\attacksystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|a:\\cours\\gtech3\\3c\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\attack\\attacksystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack\\attacksystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\attack\\attacktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack\\attacktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|a:\\cours\\gtech3\\3c\\lyo-3g-gameboy-s1p3-15\\assets\\scripts\\player\\playerbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{656AA997-BB73-48CC-581A-8804D391999A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerbrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +30,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AttackSystem.cs",
+              "DocumentMoniker": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\AttackSystem.cs",
+              "ToolTip": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Attack\\AttackSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T13:27:45.411Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OnDamageFeedBack.cs",
-              "DocumentMoniker": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\OnDamageFeedBack.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\OnDamageFeedBack.cs",
-              "ToolTip": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\OnDamageFeedBack.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\OnDamageFeedBack.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAgwD0AAAAAAAAAAAAAAA==",
+              "Title": "AttackTrigger.cs",
+              "DocumentMoniker": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackTrigger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\AttackTrigger.cs",
+              "ToolTip": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackTrigger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Attack\\AttackTrigger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T12:04:14.506Z",
+              "WhenOpened": "2026-11-19T13:27:44.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Movement.cs",
-              "DocumentMoniker": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\Movement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\Movement.cs",
-              "ToolTip": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\Movement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\Movement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAUAAAAAAAAAA==",
+              "Title": "LifeSystem.cs",
+              "DocumentMoniker": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\LifeSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\LifeSystem.cs",
+              "ToolTip": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\LifeSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\LifeSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T11:44:55.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HitBox.cs",
-              "DocumentMoniker": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\HitBox.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\HitBox.cs",
-              "ToolTip": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\HitBox.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Attack\\HitBox.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T11:27:07.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "VFXLauncher.cs",
-              "DocumentMoniker": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\VFX Trigger\\VFXLauncher.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\VFX Trigger\\VFXLauncher.cs",
-              "ToolTip": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\VFX Trigger\\VFXLauncher.cs",
-              "RelativeToolTip": "Assets\\Scripts\\VFX Trigger\\VFXLauncher.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T13:34:18.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AttackTrigger.cs",
-              "DocumentMoniker": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackTrigger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\AttackTrigger.cs",
-              "ToolTip": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackTrigger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Attack\\AttackTrigger.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwB4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T16:11:00.174Z",
+              "WhenOpened": "2026-11-19T13:27:40.893Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlayerBrain.cs",
-              "DocumentMoniker": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\PlayerBrain.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerBrain.cs",
-              "ToolTip": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\PlayerBrain.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerBrain.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAuwIcAAAABAAAAAAAAAA==",
+              "Title": "ShieldSystem.cs",
+              "DocumentMoniker": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\ShieldSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\ShieldSystem.cs",
+              "ToolTip": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\ShieldSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Attack\\ShieldSystem.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAswFcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T16:07:06.597Z",
+              "WhenOpened": "2026-11-19T13:27:31.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AttackSystem.cs",
-              "DocumentMoniker": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackSystem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Attack\\AttackSystem.cs",
-              "ToolTip": "C:\\Users\\jlefevre\\Documents\\GitHub\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Attack\\AttackSystem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Attack\\AttackSystem.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAIwC8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "PlayerBrain.cs",
+              "DocumentMoniker": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\PlayerBrain.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerBrain.cs",
+              "ToolTip": "A:\\Cours\\GTech3\\3C\\lyo-3g-gameboy-s1p3-15\\Assets\\Scripts\\Player\\PlayerBrain.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerBrain.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAD4v2wAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T16:06:56.394Z",
+              "WhenOpened": "2026-11-19T13:26:51.936Z",
               "EditorCaption": ""
             }
           ]
