@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 using UnityEngine.VFX;
 
 public class OnDamageFeedBack : MonoBehaviour
@@ -12,6 +14,7 @@ public class OnDamageFeedBack : MonoBehaviour
         public AttackID ID;
         public List<ParticleSystem> ParticleSystems;
         public List<VisualEffect> VisualEffects;
+        public TimelineAsset _TimeLine;
     }
 
     [Serializable]
@@ -27,6 +30,9 @@ public class OnDamageFeedBack : MonoBehaviour
     [SerializeField] List<DamageFeedBack> _damageFeedback;
     [SerializeField] List<ParryFeedBack> _parryFeedBack;
     [SerializeField] Animator _animator;
+
+    [SerializeField] PlayableDirector _PlayableDirector;
+
     AttackID _lastAttack = null;
 
 
@@ -75,6 +81,11 @@ public class OnDamageFeedBack : MonoBehaviour
                 vfx.Play();
 
             }
+            if (found._TimeLine)
+            {
+                _PlayableDirector.playableAsset = found._TimeLine;
+                _PlayableDirector.Play();
+            }
 
         }
         else
@@ -93,6 +104,7 @@ public class OnDamageFeedBack : MonoBehaviour
                 vfx.Play();
 
             }
+
         }
     }
     virtual public void EndFeedback()
@@ -113,6 +125,10 @@ public class OnDamageFeedBack : MonoBehaviour
             {
                 vfx.Stop();
 
+            }
+            if (found._TimeLine)
+            {
+                _PlayableDirector.Stop();
             }
 
         }
