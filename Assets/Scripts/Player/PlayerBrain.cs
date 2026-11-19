@@ -76,6 +76,7 @@ public class PlayerBrain : MonoBehaviour
             _UltimateInput.action.performed += UpdateUltimateAttack;
             _UltimateInput.action.canceled += UpdateUltimateAttack;
 
+        }
         if (_spell1Input != null)
         {
             _spell1Input.action.performed += UpdateSpell1;
@@ -86,7 +87,6 @@ public class PlayerBrain : MonoBehaviour
         {
             _shieldInput.action.performed += UpdateShield;
         }
-
     }
 
 
@@ -169,7 +169,7 @@ public class PlayerBrain : MonoBehaviour
         }
 
     }
-}
+
 
     void UpdateSpell1(InputAction.CallbackContext context)
     {

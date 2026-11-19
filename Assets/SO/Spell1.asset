@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e322cc4ea130ff40b2a48658387b8ca, type: 3}
   m_Name: Spell1
   m_EditorClassIdentifier: Assembly-CSharp::AttackID
-  ID: 1
+  ID: 2
   ComboStep: 0

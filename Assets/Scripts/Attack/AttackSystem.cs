@@ -85,6 +85,7 @@ public class AttackSystem : MonoBehaviour
         if (_spawnCoroutine != null)
             StopCoroutine(_spawnCoroutine);
 
+
         foreach (GameObject obj in currentAttack.ObjectsToActivate)
         {
             if (obj != null)
